@@ -40,12 +40,12 @@ class RepairPartLine(models.Model):
     def _onchange_product_id(self):
         if self.product_id:
             self.unit_price = self.product_id.lst_price
-
+   #حساب توتل كامل للبرودكت
     @api.depends("quantity", "unit_price")
     def _compute_subtotal(self):
         for line in self:
             line.subtotal = line.quantity * line.unit_price
-
+#لو دخلت كمية بالسالب 
     @api.constrains("quantity", "unit_price")
     def _check_non_negative_values(self):
         for line in self:

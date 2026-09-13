@@ -2,7 +2,17 @@
 
 <odoo>
 
-    <!-- Rental List View -->
+    <!-- Rental Reference Sequence -->
+    <record id="seq_bike_workshop_rental" model="ir.sequence">
+        <field name="name">Bike Workshop Rental</field>
+        <field name="code">bike.workshop.rental</field>
+        <field name="prefix">RENT-</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+    </record>
+
+
+    <!-- List View -->
     <record id="view_bike_workshop_rental_list" model="ir.ui.view">
         <field name="name">bike.workshop.rental.list</field>
         <field name="model">bike.workshop.rental</field>
@@ -23,7 +33,7 @@
     </record>
 
 
-    <!-- Rental Form View -->
+    <!-- Form -->
     <record id="view_bike_workshop_rental_form" model="ir.ui.view">
         <field name="name">bike.workshop.rental.form</field>
         <field name="model">bike.workshop.rental</field>
@@ -69,7 +79,7 @@
                     </group>
 
                     <group>
-                        <field name="daily_rental_price"/>
+                        <field name="daily_rental_price" readonly="1"/>
                         <field name="rental_duration"/>
                         <field name="total_rental_amount"/>
                     </group>
@@ -80,19 +90,21 @@
         </field>
     </record>
 
-<!-- Rental Search View -->
-<record id="view_bike_workshop_rental_search" model="ir.ui.view">
-    <field name="name">bike.workshop.rental.search</field>
-    <field name="model">bike.workshop.rental</field>
-    <field name="arch" type="xml">
-        <search>
-            <field name="reference"/>
-            <field name="customer_id"/>
-            <field name="bike_id"/>
-            <field name="state"/>
-        </search>
-    </field>
-</record>
+
+    <!-- Search View -->
+    <record id="view_bike_workshop_rental_search" model="ir.ui.view">
+        <field name="name">bike.workshop.rental.search</field>
+        <field name="model">bike.workshop.rental</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="reference"/>
+                <field name="customer_id"/>
+                <field name="bike_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
 
     <!-- All Rentals Action -->
     <record id="action_bike_workshop_rental" model="ir.actions.act_window">

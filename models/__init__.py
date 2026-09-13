@@ -4,3 +4,4 @@ from . import rental
 from . import repair
 from . import repair_part_line
 from . import res_partner
+from . import product_template

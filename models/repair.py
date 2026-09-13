@@ -7,13 +7,18 @@ class Repair(models.Model):
     _inherit = ["bike.workshop.service.mixin"]
     _description = "Bike Repair Job"
     _rec_name = "reference"
+
     _unique_repair_reference = models.Constraint(
-    "UNIQUE(reference)",
-    "Repair Reference Used in another Repair Job",
-)
+        "UNIQUE(reference)",
+        "Repair Reference Used in another Repair Job",
+    )
+
     reference = fields.Char(
         string="Repair Reference",
         required=True,
+        copy=False,
+        readonly=True,
+        default="New",
     )
 
     customer_id = fields.Many2one(
@@ -91,6 +96,16 @@ class Repair(models.Model):
         store=True,
     )
 
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("reference", "New") == "New":
+                vals["reference"] = self.env["ir.sequence"].next_by_code(
+                    "bike.workshop.repair"
+                ) or "New"
+
+        return super().create(vals_list)
+
     @api.depends("part_line_ids.subtotal")
     def _compute_total_spare_parts_cost(self):
         for repair in self:
@@ -164,6 +179,12 @@ class Repair(models.Model):
                 raise ValidationError(
                     "Service Date is required before completing the repair."
                 )
+
+            if repair.source == "workshop" and repair.bike_id:
+                repair.bike_id.write({
+                    "last_maintenance_date": repair.service_date,
+                    "service_notes": repair.service_notes,
+                })
 
             repair.state = "completed"
 
