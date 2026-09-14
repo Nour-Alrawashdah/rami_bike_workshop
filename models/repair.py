@@ -105,22 +105,12 @@ class Repair(models.Model):
                 repair.part_line_ids.mapped("subtotal")
             )
 
-    @api.constrains(
-        "state",
-        "customer_id",
-        "source",
-        "bike_id",
-        "external_bike_reference",
-        "external_bike_description",
-        "external_brand",
-        "external_bike_type",
-        "reported_issue",
-        "assigned_mechanic_id",
-    )
-    def _check_required_fields(self):
+    def action_start(self):
         for repair in self:
-            if repair.state == "draft":
-                continue
+            if repair.state != "draft":
+                raise ValidationError(
+                    "Only Draft repair jobs can be started."
+                )
 
             if not repair.customer_id:
                 raise ValidationError(
@@ -163,13 +153,6 @@ class Repair(models.Model):
                         "External Bike Type is required before starting the repair."
                     )
 
-    def action_start(self):
-        for repair in self:
-            if repair.state != "draft":
-                raise ValidationError(
-                    "Only Draft repair jobs can be started."
-                )
-
             repair.state = "in_progress"
 
     def action_complete(self):
@@ -207,4 +190,3 @@ class Repair(models.Model):
                 )
 
             repair.state = "cancelled"
-

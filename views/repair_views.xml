@@ -107,7 +107,7 @@
                         <field name="reported_issue"/>
                         <field name="assigned_mechanic_id"/>
                         <field name="last_service_date"/>
-\                        <field name="service_notes"/>
+                        <field name="service_notes"/>
                     </group>
 
 
