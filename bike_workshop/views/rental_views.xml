@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- List View -->
+    <record id="view_bike_workshop_rental_list" model="ir.ui.view">
+        <field name="name">bike.workshop.rental.list</field>
+        <field name="model">bike.workshop.rental</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="reference"/>
+                <field name="customer_id"/>
+                <field name="bike_id"/>
+                <field name="start_date"/>
+                <field name="expected_return_date"/>
+                <field name="actual_return_date"/>
+                <field name="daily_rental_price"/>
+                <field name="rental_duration"/>
+                <field name="total_rental_amount"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- Form -->
+    <record id="view_bike_workshop_rental_form" model="ir.ui.view">
+        <field name="name">bike.workshop.rental.form</field>
+        <field name="model">bike.workshop.rental</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <header>
+                    <button
+                        name="action_confirm"
+                        type="object"
+                        string="Confirm"
+                        class="btn-success"
+                        invisible="state != 'draft'"
+                    />
+
+                    <button
+                        name="action_return"
+                        type="object"
+                        string="Return"
+                        class="btn-primary"
+                        invisible="state != 'confirmed'"
+                    />
+
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,confirmed,returned"
+                    />
+                </header>
+
+                <sheet>
+
+                    <group>
+                        <field name="reference"/>
+                        <field name="customer_id"/>
+                        <field name="bike_id"/>
+                    </group>
+
+                    <group>
+                        <field name="start_date"/>
+                        <field name="expected_return_date"/>
+                        <field name="actual_return_date"/>
+                    </group>
+
+                    <group>
+                        <field name="daily_rental_price" readonly="state != 'draft'"/>
+                        <field name="rental_duration"/>
+                        <field name="total_rental_amount"/>
+                    </group>
+
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Search View -->
+    <record id="view_bike_workshop_rental_search" model="ir.ui.view">
+        <field name="name">bike.workshop.rental.search</field>
+        <field name="model">bike.workshop.rental</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="reference"/>
+                <field name="customer_id"/>
+                <field name="bike_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+
+    <!-- All Rentals Action -->
+    <record id="action_bike_workshop_rental" model="ir.actions.act_window">
+        <field name="name">All Rentals</field>
+        <field name="res_model">bike.workshop.rental</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- Confirmed Rentals Action -->
+    <record id="action_bike_workshop_confirmed_rentals" model="ir.actions.act_window">
+        <field name="name">Confirmed Rentals</field>
+        <field name="res_model">bike.workshop.rental</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('state', '=', 'confirmed')]</field>
+    </record>
+
+
+    <!-- Rentals Parent Menu -->
+    <menuitem
+        id="menu_bike_workshop_rentals"
+        name="Rentals"
+        parent="bike_workshop_menu_root"
+    />
+
+
+    <!-- All Rentals Menu -->
+    <menuitem
+        id="menu_bike_workshop_all_rentals"
+        name="All Rentals"
+        parent="menu_bike_workshop_rentals"
+        action="action_bike_workshop_rental"
+    />
+
+
+    <!-- Confirmed Rentals Menu -->
+    <menuitem
+        id="menu_bike_workshop_confirmed_rentals"
+        name="Confirmed Rentals"
+        parent="menu_bike_workshop_rentals"
+        action="action_bike_workshop_confirmed_rentals"
+    />
+
+</odoo>

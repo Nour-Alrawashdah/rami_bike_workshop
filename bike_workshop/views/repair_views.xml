@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- Product Form: Is Spare Part -->
+    <record id="view_product_template_form_bike_workshop_spare_part" model="ir.ui.view">
+        <field name="name">product.template.form.bike.workshop.spare.part</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="is_spare_part"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- List View -->
+    <record id="view_bike_workshop_repair_list" model="ir.ui.view">
+        <field name="name">bike.workshop.repair.list</field>
+        <field name="model">bike.workshop.repair</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="reference"/>
+                <field name="customer_id"/>
+                <field name="source"/>
+                <field name="bike_id"/>
+                <field name="reported_issue"/>
+                <field name="total_spare_parts_cost"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- Form -->
+    <record id="view_bike_workshop_repair_form" model="ir.ui.view">
+        <field name="name">bike.workshop.repair.form</field>
+        <field name="model">bike.workshop.repair</field>
+        <field name="arch" type="xml">
+
+            <form>
+
+                <header>
+
+                    <button
+                        name="action_start"
+                        type="object"
+                        string="Start Repair"
+                        class="btn-success"
+                        invisible="state != 'draft'"
+                    />
+
+                    <button
+                        name="action_complete"
+                        type="object"
+                        string="Complete"
+                        class="btn-primary"
+                        invisible="state != 'in_progress'"
+                    />
+
+                    <button
+                        name="action_cancel"
+                        type="object"
+                        string="Cancel"
+                        class="btn-secondary"
+                        invisible="state not in ['draft', 'in_progress']"
+                    />
+
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,in_progress,completed,cancelled"
+                    />
+
+                </header>
+
+                <sheet>
+
+                    <group>
+                        <field name="reference"/>
+                        <field name="customer_id"/>
+                        <field name="source"/>
+                    </group>
+
+
+                    <!-- Workshop Bike -->
+                    <group invisible="source != 'workshop'">
+                        <field name="bike_id"/>
+                    </group>
+
+
+                    <!-- External Bike -->
+                    <group
+                        string="External Bike Information"
+                        invisible="source != 'external'"
+                    >
+                        <field name="external_bike_reference"/>
+                        <field name="external_bike_description"/>
+                        <field name="external_brand"/>
+                        <field name="external_bike_type"/>
+                    </group>
+
+
+                    <!-- Repair Information -->
+                    <group string="Repair Information">
+                        <field name="reported_issue"/>
+                        <field name="assigned_mechanic_id"/>
+                        <field name="last_service_date"/>
+                        <field name="service_notes"/>
+                    </group>
+
+
+                    <!-- Spare Parts -->
+                    <group string="Spare Parts">
+                        <field name="part_line_ids">
+                            <list editable="bottom">
+                                <field
+                                    name="product_id"
+                                    domain="[('product_tmpl_id.is_spare_part', '=', True)]"
+                                />
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="subtotal"/>
+                            </list>
+                        </field>
+
+                        <field name="total_spare_parts_cost"/>
+                    </group>
+
+
+                </sheet>
+
+            </form>
+
+        </field>
+    </record>
+
+
+    <!-- Search -->
+    <record id="view_bike_workshop_repair_search" model="ir.ui.view">
+        <field name="name">bike.workshop.repair.search</field>
+        <field name="model">bike.workshop.repair</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="reference"/>
+                <field name="customer_id"/>
+                <field name="source"/>
+                <field name="bike_id"/>
+                <field name="assigned_mechanic_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+
+    <!-- Action -->
+    <record id="action_bike_workshop_repair" model="ir.actions.act_window">
+        <field name="name">Repair Jobs</field>
+        <field name="res_model">bike.workshop.repair</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- Menu -->
+    <menuitem
+        id="menu_bike_workshop_repairs"
+        name="Repair Jobs"
+        parent="bike_workshop_menu_root"
+        action="action_bike_workshop_repair"
+    />
+
+</odoo>
