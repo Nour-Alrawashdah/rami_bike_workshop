@@ -12,7 +12,7 @@
                 <field name="brand"/>
                 <field name="bike_type"/>
                 <field name="purchase_date"/>
-                <field name="last_maintenance_date"/>
+                <field name="last_service_date"/>
                 <field name="daily_rental_price"/>
                 <field name="wheel_size"/>
                 <field name="rental_count"/>
@@ -51,7 +51,7 @@
                         <field name="brand"/>
                         <field name="bike_type"/>
                         <field name="purchase_date"/>
-                        <field name="last_maintenance_date"/>
+                        <field name="last_service_date"/>
                         <field name="assigned_mechanic_id"/>
                         <field name="service_notes"/>
                         <field name="daily_rental_price"/>

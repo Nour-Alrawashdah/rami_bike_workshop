@@ -29,8 +29,14 @@ class Rental(models.Model):
         required=True,
     )
 
-    start_date = fields.Date(required=True)
-    expected_return_date = fields.Date(required=True)
+    start_date = fields.Date(
+        required=True,
+    )
+
+    expected_return_date = fields.Date(
+        required=True,
+    )
+
     actual_return_date = fields.Date()
 
     daily_rental_price = fields.Float(
@@ -38,11 +44,13 @@ class Rental(models.Model):
     )
 
     rental_duration = fields.Integer(
-        compute="_compute_rental_duration"
+        compute="_compute_rental_duration",
+        store=True,
     )
 
     total_rental_amount = fields.Float(
-        compute="_compute_total_rental_amount"
+        compute="_compute_total_rental_amount",
+        store=True,
     )
 
     state = fields.Selection(
@@ -67,11 +75,6 @@ class Rental(models.Model):
                 bike = self.env["bike.workshop.bike"].browse(
                     vals["bike_id"]
                 )
-
-                if not bike.daily_rental_price:
-                    raise ValidationError(
-                        "The selected bike must have a Daily Rental Price."
-                    )
 
                 if not vals.get("daily_rental_price"):
                     vals["daily_rental_price"] = bike.daily_rental_price
@@ -194,12 +197,13 @@ class Rental(models.Model):
         if "daily_rental_price" in vals:
             for rental in self:
                 if (
-                    rental.state == "confirmed"
+                    rental.state != "draft"
                     and vals["daily_rental_price"]
                     != rental.daily_rental_price
                 ):
                     raise ValidationError(
-                        "Daily Rental Price cannot be changed after the rental is confirmed."
+                        "Daily Rental Price cannot be changed after "
+                        "the rental is confirmed."
                     )
 
         return super().write(vals)

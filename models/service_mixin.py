@@ -10,7 +10,7 @@ class ServiceMixin(models.AbstractModel):
         string="Assigned Mechanic",
     )
 
-    last_maintenance_date = fields.Date(
+    last_service_date = fields.Date(
         string="Last Service Date",
     )
 

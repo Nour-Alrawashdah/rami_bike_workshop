@@ -36,16 +36,27 @@ class RepairPartLine(models.Model):
         store=True,
     )
 
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("product_id") and not vals.get("unit_price"):
+                product = self.env["product.product"].browse(
+                    vals["product_id"]
+                )
+                vals["unit_price"] = product.lst_price
+
+        return super().create(vals_list)
+
     @api.onchange("product_id")
     def _onchange_product_id(self):
         if self.product_id:
             self.unit_price = self.product_id.lst_price
-   #حساب توتل كامل للبرودكت
+
     @api.depends("quantity", "unit_price")
     def _compute_subtotal(self):
         for line in self:
             line.subtotal = line.quantity * line.unit_price
-#لو دخلت كمية بالسالب 
+
     @api.constrains("quantity", "unit_price")
     def _check_non_negative_values(self):
         for line in self:
@@ -58,3 +69,4 @@ class RepairPartLine(models.Model):
                 raise ValidationError(
                     "Unit Price cannot be negative."
                 )
+

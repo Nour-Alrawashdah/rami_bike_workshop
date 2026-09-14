@@ -1,4 +1,6 @@
-from odoo import fields, models
+from odoo import api, fields, models
+from .constants import BIKE_TYPE_SELECTION
+
 
 
 class Bike(models.Model):
@@ -16,12 +18,7 @@ class Bike(models.Model):
     )
 
     bike_type = fields.Selection(
-        [
-            ("road", "Road"),
-            ("mountain", "Mountain"),
-            ("city", "City"),
-            ("electric", "Electric"),
-        ],
+        BIKE_TYPE_SELECTION,
         string="Bike Type",
     )
 
@@ -48,6 +45,7 @@ class Bike(models.Model):
         compute="_compute_rental_count",
     )
 
+    @api.depends("rental_ids")
     def _compute_rental_count(self):
         for bike in self:
             bike.rental_count = len(bike.rental_ids)

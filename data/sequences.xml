@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- Rental Sequence -->
+    <record id="seq_bike_workshop_rental" model="ir.sequence">
+        <field name="name">Bike Workshop Rental</field>
+        <field name="code">bike.workshop.rental</field>
+        <field name="prefix">RENT-</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+    </record>
+
+    <!-- Repair  Sequence -->
+    <record id="seq_bike_workshop_repair" model="ir.sequence">
+        <field name="name">Bike Workshop Repair</field>
+        <field name="code">bike.workshop.repair</field>
+        <field name="prefix">REP-</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+    </record>
+
+</odoo>

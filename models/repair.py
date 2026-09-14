@@ -1,5 +1,6 @@
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
+from .constants import BIKE_TYPE_SELECTION
 
 
 class Repair(models.Model):
@@ -54,22 +55,13 @@ class Repair(models.Model):
     )
 
     external_bike_type = fields.Selection(
-        [
-            ("road", "Road"),
-            ("mountain", "Mountain"),
-            ("city", "City"),
-            ("electric", "Electric"),
-        ],
+        BIKE_TYPE_SELECTION,
         string="External Bike Type",
     )
 
     reported_issue = fields.Text(
         string="Reported Issue",
         required=True,
-    )
-
-    service_date = fields.Date(
-        string="Service Date",
     )
 
     state = fields.Selection(
@@ -113,12 +105,22 @@ class Repair(models.Model):
                 repair.part_line_ids.mapped("subtotal")
             )
 
-    def action_start(self):
+    @api.constrains(
+        "state",
+        "customer_id",
+        "source",
+        "bike_id",
+        "external_bike_reference",
+        "external_bike_description",
+        "external_brand",
+        "external_bike_type",
+        "reported_issue",
+        "assigned_mechanic_id",
+    )
+    def _check_required_fields(self):
         for repair in self:
-            if repair.state != "draft":
-                raise ValidationError(
-                    "Only Draft repair jobs can be started."
-                )
+            if repair.state == "draft":
+                continue
 
             if not repair.customer_id:
                 raise ValidationError(
@@ -161,6 +163,13 @@ class Repair(models.Model):
                         "External Bike Type is required before starting the repair."
                     )
 
+    def action_start(self):
+        for repair in self:
+            if repair.state != "draft":
+                raise ValidationError(
+                    "Only Draft repair jobs can be started."
+                )
+
             repair.state = "in_progress"
 
     def action_complete(self):
@@ -175,16 +184,18 @@ class Repair(models.Model):
                     "Service Notes are required before completing the repair."
                 )
 
-            if not repair.service_date:
+            if not repair.last_service_date:
                 raise ValidationError(
-                    "Service Date is required before completing the repair."
+                    "Last Service Date is required before completing the repair."
                 )
 
             if repair.source == "workshop" and repair.bike_id:
-                repair.bike_id.write({
-                    "last_maintenance_date": repair.service_date,
-                    "service_notes": repair.service_notes,
-                })
+                repair.bike_id.write(
+                    {
+                        "last_service_date": repair.last_service_date,
+                        "service_notes": repair.service_notes,
+                    }
+                )
 
             repair.state = "completed"
 
@@ -196,3 +207,4 @@ class Repair(models.Model):
                 )
 
             repair.state = "cancelled"
+

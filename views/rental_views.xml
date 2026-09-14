@@ -2,16 +2,6 @@
 
 <odoo>
 
-    <!-- Rental Reference Sequence -->
-    <record id="seq_bike_workshop_rental" model="ir.sequence">
-        <field name="name">Bike Workshop Rental</field>
-        <field name="code">bike.workshop.rental</field>
-        <field name="prefix">RENT-</field>
-        <field name="padding">5</field>
-        <field name="number_next">1</field>
-    </record>
-
-
     <!-- List View -->
     <record id="view_bike_workshop_rental_list" model="ir.ui.view">
         <field name="name">bike.workshop.rental.list</field>
@@ -79,7 +69,7 @@
                     </group>
 
                     <group>
-                        <field name="daily_rental_price" readonly="1"/>
+                        <field name="daily_rental_price" readonly="state != 'draft'"/>
                         <field name="rental_duration"/>
                         <field name="total_rental_amount"/>
                     </group>

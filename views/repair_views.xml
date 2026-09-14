@@ -2,16 +2,6 @@
 
 <odoo>
 
-    <!-- Repair Reference Sequence -->
-    <record id="seq_bike_workshop_repair" model="ir.sequence">
-        <field name="name">Bike Workshop Repair</field>
-        <field name="code">bike.workshop.repair</field>
-        <field name="prefix">REP-</field>
-        <field name="padding">5</field>
-        <field name="number_next">1</field>
-    </record>
-
-
     <!-- Product Form: Is Spare Part -->
     <record id="view_product_template_form_bike_workshop_spare_part" model="ir.ui.view">
         <field name="name">product.template.form.bike.workshop.spare.part</field>
@@ -116,9 +106,8 @@
                     <group string="Repair Information">
                         <field name="reported_issue"/>
                         <field name="assigned_mechanic_id"/>
-                        <field name="last_maintenance_date"/>
-                        <field name="service_date"/>
-                        <field name="service_notes"/>
+                        <field name="last_service_date"/>
+\                        <field name="service_notes"/>
                     </group>
 
 

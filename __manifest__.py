@@ -7,6 +7,7 @@
     'data': [
        'security/bike_security.xml',
         'security/ir.model.access.csv',
+        'data/sequences.xml',
         'views/bike_views.xml',
         'views/rental_views.xml',
         'views/repair_views.xml',
