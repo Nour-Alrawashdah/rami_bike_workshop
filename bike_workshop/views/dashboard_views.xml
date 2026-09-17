@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="bike_workshop_dashboard_view_form" model="ir.ui.view">
+        <field name="name">bike.workshop.dashboard.form</field>
+        <field name="model">bike.workshop.dashboard</field>
+        <field name="arch" type="xml">
+
+            <form string="Workshop Dashboard">
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1>Workshop Operations Dashboard</h1>
+                    </div>
+
+                    <div class="row mt-4">
+
+                        <!-- Active Rentals -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <button
+                                name="action_open_active_rentals"
+                                type="object"
+                                class="btn btn-primary w-100 p-4"
+                                style="min-height: 150px; border-radius: 12px;"
+                            >
+                                <div class="text-center">
+                                    <div style="font-size: 38px;">
+                                        <i class="fa fa-bicycle" title="Active Rentals"/>
+                                    </div>
+
+                                    <div style="font-size: 18px; font-weight: bold;">
+                                        Active Rentals Today
+                                    </div>
+
+                                    <div style="font-size: 34px; font-weight: bold;">
+                                        <field
+                                            name="active_rentals_today"
+                                            nolabel="1"
+                                        />
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Returns Due -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <button
+                                name="action_open_returns_due"
+                                type="object"
+                                class="btn btn-warning w-100 p-4"
+                                style="min-height: 150px; border-radius: 12px;"
+                            >
+                                <div class="text-center">
+                                    <div style="font-size: 38px;">
+                                        <i class="fa fa-calendar" title="Returns Due"/>
+                                    </div>
+
+                                    <div style="font-size: 18px; font-weight: bold;">
+                                        Returns Due Today
+                                    </div>
+
+                                    <div style="font-size: 34px; font-weight: bold;">
+                                        <field
+                                            name="returns_due_today"
+                                            nolabel="1"
+                                        />
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Repairs -->
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <button
+                                name="action_open_repairs_in_progress"
+                                type="object"
+                                class="btn btn-danger w-100 p-4"
+                                style="min-height: 150px; border-radius: 12px;"
+                            >
+                                <div class="text-center">
+                                    <div style="font-size: 38px;">
+                                        <i class="fa fa-wrench" title="Repairs In Progress"/>
+                                    </div>
+
+                                    <div style="font-size: 18px; font-weight: bold;">
+                                        Repairs In Progress
+                                    </div>
+
+                                    <div style="font-size: 34px; font-weight: bold;">
+                                        <field
+                                            name="repairs_in_progress"
+                                            nolabel="1"
+                                        />
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+
+    <record id="bike_workshop_dashboard_record" model="bike.workshop.dashboard"/>
+
+
+    <record id="action_bike_workshop_dashboard" model="ir.actions.act_window">
+        <field name="name">Workshop Dashboard</field>
+        <field name="res_model">bike.workshop.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="bike_workshop_dashboard_record"/>
+        <field name="target">current</field>
+    </record>
+
+
+    <menuitem
+        id="menu_bike_workshop_dashboard"
+        name="Dashboard"
+        parent="bike_workshop_menu_root"
+        action="action_bike_workshop_dashboard"
+        sequence="1"
+    />
+
+</odoo>

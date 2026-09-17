@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <template id="portal_my_rentals" name="My Rentals">
+        <t t-call="portal.portal_layout">
+
+            <div class="container my-5">
+
+                <!-- Page Header -->
+                <div class="mb-5">
+                    <h1 class="fw-bold">My Rentals</h1>
+                    <p class="text-muted mb-0">
+                        View your bike rental history and rental details.
+                    </p>
+                </div>
+
+                <t t-if="rentals">
+
+                    <div class="row g-4">
+
+                        <t t-foreach="rentals" t-as="rental">
+
+                            <div class="col-lg-6">
+
+                                <div
+                                    class="card h-100 border-0 shadow-sm"
+                                    style="border-radius: 16px;"
+                                >
+
+                                    <div class="card-body p-4">
+
+                                        <!-- Header -->
+                                        <div
+                                            class="d-flex justify-content-between align-items-start mb-3"
+                                        >
+
+                                            <div>
+                                                <small class="text-muted">
+                                                    RENTAL
+                                                </small>
+
+                                                <h4 class="fw-bold mb-0">
+                                                    <span t-field="rental.reference"/>
+                                                </h4>
+                                            </div>
+
+                                            <span
+                                                class="badge bg-primary px-3 py-2"
+                                            >
+                                                <span t-field="rental.state"/>
+                                            </span>
+
+                                        </div>
+
+                                        <hr/>
+
+                                        <!-- Bike -->
+                                        <div class="mb-4">
+
+                                            <small class="text-muted">
+                                                Bike
+                                            </small>
+
+                                            <div class="fs-5 fw-semibold">
+                                                🚲
+                                                <span t-field="rental.bike_id"/>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Dates -->
+                                        <div class="row g-3 mb-4">
+
+                                            <div class="col-6">
+
+                                                <small class="text-muted">
+                                                    Start Date
+                                                </small>
+
+                                                <div class="fw-semibold">
+                                                    <span t-field="rental.start_date"/>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-6">
+
+                                                <small class="text-muted">
+                                                    Expected Return
+                                                </small>
+
+                                                <div class="fw-semibold">
+                                                    <span t-field="rental.expected_return_date"/>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Footer -->
+                                        <div
+                                            class="d-flex justify-content-between align-items-center"
+                                        >
+
+                                            <div>
+
+                                                <small class="text-muted">
+                                                    Total Amount
+                                                </small>
+
+                                                <div class="fs-5 fw-bold">
+                                                    <span
+                                                        t-field="rental.total_rental_amount"
+                                                    />
+                                                </div>
+
+                                            </div>
+
+                                            <a
+                                                t-att-href="'/my/rentals/%s' % rental.id"
+                                                class="btn btn-primary px-4"
+                                            >
+                                                View Details
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </t>
+
+                    </div>
+
+                </t>
+
+                <t t-else="">
+
+                    <div
+                        class="card border-0 shadow-sm text-center p-5"
+                        style="border-radius: 16px;"
+                    >
+
+                        <div class="display-4 mb-3">
+                            🚲
+                        </div>
+
+                        <h3 class="fw-bold">
+                            No rentals yet
+                        </h3>
+
+                        <p class="text-muted mb-0">
+                            Your rental history will appear here.
+                        </p>
+
+                    </div>
+
+                </t>
+
+            </div>
+
+        </t>
+    </template>
+
+
+    <template id="portal_rental_detail" name="Rental Details">
+        <t t-call="portal.portal_layout">
+
+            <div class="container my-5">
+
+                <!-- Back -->
+                <a
+                    href="/my/rentals"
+                    class="btn btn-outline-secondary mb-4"
+                >
+                    ← Back to My Rentals
+                </a>
+
+                <!-- Page Header -->
+                <div class="mb-4">
+
+                    <small class="text-muted">
+                        RENTAL DETAILS
+                    </small>
+
+                    <h1 class="fw-bold mb-0">
+                        <span t-field="rental.reference"/>
+                    </h1>
+
+                </div>
+
+                <!-- Main Card -->
+                <div
+                    class="card border-0 shadow-sm"
+                    style="border-radius: 16px;"
+                >
+
+                    <div class="card-body p-4">
+
+                        <!-- Card Header -->
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-4"
+                        >
+
+                            <div>
+
+                                <small class="text-muted">
+                                    Bike
+                                </small>
+
+                                <h4 class="fw-semibold mb-0">
+                                    🚲
+                                    <span t-field="rental.bike_id"/>
+                                </h4>
+
+                            </div>
+
+                            <span
+                                class="badge bg-primary px-3 py-2"
+                            >
+                                <span t-field="rental.state"/>
+                            </span>
+
+                        </div>
+
+                        <hr/>
+
+                        <!-- Rental Information -->
+                        <div class="row g-4 mt-1">
+
+                            <div class="col-md-6">
+
+                                <small class="text-muted">
+                                    Start Date
+                                </small>
+
+                                <div class="fw-semibold">
+                                    <span t-field="rental.start_date"/>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <small class="text-muted">
+                                    Expected Return
+                                </small>
+
+                                <div class="fw-semibold">
+                                    <span t-field="rental.expected_return_date"/>
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="col-md-6"
+                                t-if="rental.actual_return_date"
+                            >
+
+                                <small class="text-muted">
+                                    Actual Return
+                                </small>
+
+                                <div class="fw-semibold">
+                                    <span t-field="rental.actual_return_date"/>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <small class="text-muted">
+                                    Rental Duration
+                                </small>
+
+                                <div class="fw-semibold">
+                                    <span t-field="rental.rental_duration"/>
+                                    days
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <small class="text-muted">
+                                    Daily Rental Price
+                                </small>
+
+                                <div class="fw-semibold">
+                                    <span t-field="rental.daily_rental_price"/>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <small class="text-muted">
+                                    Total Amount
+                                </small>
+
+                                <div class="fs-5 fw-bold">
+                                    <span
+                                        t-field="rental.total_rental_amount"
+                                    />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </t>
+    </template>
+
+
+    <template
+        id="portal_my_home_bike_rentals"
+        inherit_id="portal.portal_my_home"
+    >
+
+        <xpath
+            expr="//div[@id='portal_common_category']"
+            position="inside"
+        >
+
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">My Rentals</t>
+                <t t-set="url" t-value="'/my/rentals'"/>
+                <t t-set="placeholder_count" t-value="'rental_count'"/>
+            </t>
+
+        </xpath>
+
+    </template>
+
+</odoo>

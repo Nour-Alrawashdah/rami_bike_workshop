@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <template id="report_rental_agreement">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="rental">
+                <t t-call="web.external_layout">
+
+                    <div class="page">
+
+                        <h2>Rental Agreement</h2>
+
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <strong>Rental Reference:</strong>
+                                <span t-field="rental.reference"/>
+                            </div>
+
+                            <div class="col-6">
+                                <strong>Status:</strong>
+                                <span t-field="rental.state"/>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-4">Customer Information</h4>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>Customer:</strong>
+                                <span t-field="rental.customer_id"/>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-4">Rental Information</h4>
+
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Bike</strong></td>
+                                    <td>
+                                        <span t-field="rental.bike_id"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Start Date</strong></td>
+                                    <td>
+                                        <span t-field="rental.start_date"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Expected Return Date</strong></td>
+                                    <td>
+                                        <span t-field="rental.expected_return_date"/>
+                                    </td>
+                                </tr>
+
+                                <tr t-if="rental.actual_return_date">
+                                    <td><strong>Actual Return Date</strong></td>
+                                    <td>
+                                        <span t-field="rental.actual_return_date"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Rental Duration</strong></td>
+                                    <td>
+                                        <span t-field="rental.rental_duration"/>
+                                        days
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Daily Rental Price</strong></td>
+                                    <td>
+                                        <span t-field="rental.daily_rental_price"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Total Rental Amount</strong></td>
+                                    <td>
+                                        <span t-field="rental.total_rental_amount"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
