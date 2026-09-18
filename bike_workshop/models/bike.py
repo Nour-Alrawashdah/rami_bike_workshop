@@ -1,6 +1,5 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from .constants import BIKE_TYPE_SELECTION
-
 
 
 class Bike(models.Model):
@@ -55,7 +54,7 @@ class Bike(models.Model):
 
         return {
             "type": "ir.actions.act_window",
-            "name": "Rentals",
+            "name": _("Rentals"),
             "res_model": "bike.workshop.rental",
             "view_mode": "list,form",
             "domain": [("bike_id", "=", self.id)],
