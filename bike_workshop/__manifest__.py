@@ -26,10 +26,16 @@
     ],
 
     'assets': {
-        'web.assets_backend': [
-            'bike_workshop/static/src/css/branding.css',
-        ],
-    },
+    'web.assets_backend': [
+        'bike_workshop/static/src/css/branding.css',
+    ],
+    'web.assets_frontend': [
+        'bike_workshop/static/src/css/branding.css',
+    ],
+    'web.report_assets_common': [
+        'bike_workshop/static/src/css/branding.css',
+    ],
+},
 
     'installable': True,
 

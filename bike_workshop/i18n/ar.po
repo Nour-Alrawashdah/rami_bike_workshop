@@ -18,7 +18,7 @@ msgstr ""
 #. module: bike_workshop
 #: model:ir.actions.report,print_report_name:bike_workshop.action_report_rental_agreement
 msgid "'Rental Agreement - %s' % object.reference"
-msgstr ""
+msgstr "'اتفاقية التأجير - %s' % object.reference"
 
 #. module: bike_workshop
 #: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
@@ -417,7 +417,7 @@ msgstr "لا يمكن أن يكون سعر التأجير اليومي سالب�
 #. module: bike_workshop
 #: model:ir.ui.menu,name:bike_workshop.menu_bike_workshop_dashboard
 msgid "Dashboard"
-msgstr "لوحة المعلومات"
+msgstr "الصفحة الرئيسية"
 
 #. module: bike_workshop
 #: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__display_name
@@ -1018,7 +1018,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/bike_workshop/models/dashboard.py:0
 msgid "state"
-msgstr ""
+msgstr "الحالة"
 
 #. module: bike_workshop
 #: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail

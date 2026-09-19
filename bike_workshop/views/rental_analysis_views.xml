@@ -7,9 +7,9 @@
         <field name="name">bike.workshop.rental.pivot</field>
         <field name="model">bike.workshop.rental</field>
         <field name="arch" type="xml">
-            <pivot string="Rental Analysis">
+            <pivot string="Rental Analysis" disable_linking="True">
 
-                <!-- Grouping Fields -->
+               
                 <field name="start_date" interval="month" type="row"/>
                 <field name="bike_type" type="row"/>
                 <field name="state" type="row"/>
@@ -90,7 +90,7 @@
     <field name="name">bike.workshop.rental.graph</field>
     <field name="model">bike.workshop.rental</field>
     <field name="arch" type="xml">
-        <graph string="Rental Analysis" type="bar">
+        <graph string="Rental Analysis" type="bar" disable_linking="True">
 
             <field name="start_date" interval="month"/>
             <field name="total_rental_amount" type="measure"/>
@@ -107,10 +107,14 @@
     <field name="search_view_id" ref="view_bike_workshop_rental_analysis_search"/>
     <field name="context">
         {
-            "search_default_confirmed_returned": 1
+            'create': False,
+            'edit': False,
+            'delete': False,
+            'search_default_confirmed_returned': 1
         }
     </field>
 </record>
+
 <!-- Rental Analysis Menu -->
 <menuitem
     id="menu_bike_workshop_rental_analysis"

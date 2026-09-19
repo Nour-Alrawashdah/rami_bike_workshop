@@ -1,4 +1,3 @@
-/* Bike Workshop Branding */
 
 
 /* Main menu bar of Bike Workshop */
@@ -86,4 +85,22 @@
 
     color: #FFFFFF !important;
 
+}
+
+/* Bike Workshop - Portal Branding */
+
+.o_portal_wrap .btn-primary {
+    background-color: #8EBF45 !important;
+    border-color: #8EBF45 !important;
+    color: #FFFFFF !important;
+}
+
+.o_portal_wrap .btn-primary:hover {
+    background-color: #9FBF6F !important;
+    border-color: #9FBF6F !important;
+    color: #FFFFFF !important;
+}
+
+.o_portal_wrap .badge.bg-primary {
+    background-color: #8EBF45 !important;
 }
