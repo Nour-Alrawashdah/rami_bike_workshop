@@ -7,11 +7,16 @@
         <field name="model">bike.workshop.dashboard</field>
         <field name="arch" type="xml">
 
-            <form string="Workshop Dashboard">
+            <form string="Workshop Dashboard " create="0">
                 <sheet>
 
-                    <div class="oe_title">
-                        <h1>Workshop Operations Dashboard</h1>
+                    <div
+                        class="oe_title"
+                        style="padding: 20px; background-color: #DEF2C9; border-radius: 12px;"
+                    >
+                        <h1 style="color: #404040; margin: 0;">
+                            Workshop Operations Dashboard
+                        </h1>
                     </div>
 
                     <div class="row mt-4">
@@ -21,78 +26,113 @@
                             <button
                                 name="action_open_active_rentals"
                                 type="object"
-                                class="btn btn-primary w-100 p-4"
-                                style="min-height: 150px; border-radius: 12px;"
+                                class="btn w-100 p-4"
+                                style="min-height: 150px; border-radius: 12px; background-color: #F2F2F2; color: #404040; border: 2px solid #9FBF6F; box-shadow: 0 2px 6px rgba(64, 64, 64, 0.10);"
                             >
                                 <div class="text-center">
-                                    <div style="font-size: 38px;">
-                                        <i class="fa fa-bicycle" title="Active Rentals"/>
+
+                                    <div
+                                        style="font-size: 38px; color: #8EBF45;"
+                                    >
+                                        <i
+                                            class="fa fa-bicycle"
+                                            title="Active Rentals"
+                                        />
                                     </div>
 
-                                    <div style="font-size: 18px; font-weight: bold;">
+                                    <div
+                                        style="font-size: 18px; font-weight: bold; color: #404040;"
+                                    >
                                         Active Rentals Today
                                     </div>
 
-                                    <div style="font-size: 34px; font-weight: bold;">
+                                    <div
+                                        style="font-size: 34px; font-weight: bold; color: #8EBF45;"
+                                    >
                                         <field
                                             name="active_rentals_today"
                                             nolabel="1"
                                         />
                                     </div>
+
                                 </div>
                             </button>
                         </div>
+
 
                         <!-- Returns Due -->
                         <div class="col-lg-4 col-md-6 mb-4">
                             <button
                                 name="action_open_returns_due"
                                 type="object"
-                                class="btn btn-warning w-100 p-4"
-                                style="min-height: 150px; border-radius: 12px;"
+                                class="btn w-100 p-4"
+                                style="min-height: 150px; border-radius: 12px; background-color: #DEF2C9; color: #404040; border: 2px solid #9FBF6F; box-shadow: 0 2px 6px rgba(64, 64, 64, 0.10);"
                             >
                                 <div class="text-center">
-                                    <div style="font-size: 38px;">
-                                        <i class="fa fa-calendar" title="Returns Due"/>
+
+                                    <div
+                                        style="font-size: 38px; color: #8EBF45;"
+                                    >
+                                        <i
+                                            class="fa fa-calendar"
+                                            title="Returns Due"
+                                        />
                                     </div>
 
-                                    <div style="font-size: 18px; font-weight: bold;">
+                                    <div
+                                        style="font-size: 18px; font-weight: bold; color: #404040;"
+                                    >
                                         Returns Due Today
                                     </div>
 
-                                    <div style="font-size: 34px; font-weight: bold;">
+                                    <div
+                                        style="font-size: 34px; font-weight: bold; color: #8EBF45;"
+                                    >
                                         <field
                                             name="returns_due_today"
                                             nolabel="1"
                                         />
                                     </div>
+
                                 </div>
                             </button>
                         </div>
+
 
                         <!-- Repairs -->
                         <div class="col-lg-4 col-md-6 mb-4">
                             <button
                                 name="action_open_repairs_in_progress"
                                 type="object"
-                                class="btn btn-danger w-100 p-4"
-                                style="min-height: 150px; border-radius: 12px;"
+                                class="btn w-100 p-4"
+                                style="min-height: 150px; border-radius: 12px; background-color: #F2F2F2; color: #404040; border: 2px solid #9FBF6F; box-shadow: 0 2px 6px rgba(64, 64, 64, 0.10);"
                             >
                                 <div class="text-center">
-                                    <div style="font-size: 38px;">
-                                        <i class="fa fa-wrench" title="Repairs In Progress"/>
+
+                                    <div
+                                        style="font-size: 38px; color: #9FBF6F;"
+                                    >
+                                        <i
+                                            class="fa fa-wrench"
+                                            title="Repairs In Progress"
+                                        />
                                     </div>
 
-                                    <div style="font-size: 18px; font-weight: bold;">
+                                    <div
+                                        style="font-size: 18px; font-weight: bold; color: #404040;"
+                                    >
                                         Repairs In Progress
                                     </div>
 
-                                    <div style="font-size: 34px; font-weight: bold;">
+                                    <div
+                                        style="font-size: 34px; font-weight: bold; color: #8EBF45;"
+                                    >
                                         <field
                                             name="repairs_in_progress"
                                             nolabel="1"
                                         />
                                     </div>
+
                                 </div>
                             </button>
                         </div>

@@ -66,6 +66,7 @@
                         <field name="start_date"/>
                         <field name="expected_return_date"/>
                         <field name="actual_return_date"/>
+                        <field name="return_performance"/>
                     </group>
 
                     <group>

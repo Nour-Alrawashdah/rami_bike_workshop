@@ -5,7 +5,7 @@
     <template id="report_rental_agreement">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="rental">
-                <t t-call="web.external_layout">
+                <t t-call="web.external_layout" t-lang="rental.customer_id.lang">
 
                     <div class="page">
 

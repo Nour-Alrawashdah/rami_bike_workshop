@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -62,11 +62,10 @@ class RepairPartLine(models.Model):
         for line in self:
             if line.quantity < 0:
                 raise ValidationError(
-                    "Quantity cannot be negative."
+                    _("Quantity cannot be negative.")
                 )
 
             if line.unit_price < 0:
                 raise ValidationError(
-                    "Unit Price cannot be negative."
+                    _("Unit Price cannot be negative.")
                 )
-

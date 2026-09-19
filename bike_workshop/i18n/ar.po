@@ -1,0 +1,1026 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bike_workshop
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-17 19:32+0000\n"
+"PO-Revision-Date: 2026-09-17 19:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: bike_workshop
+#: model:ir.actions.report,print_report_name:bike_workshop.action_report_rental_agreement
+msgid "'Rental Agreement - %s' % object.reference"
+msgstr "'اتفاقية التأجير - %s' % object.reference"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "<i class=\"fa fa-bicycle\" title=\"Active Rentals\"/>"
+msgstr "<i class=\"fa fa-bicycle\" title=\"التأجيرات النشطة\"/>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "<i class=\"fa fa-calendar\" title=\"Returns Due\"/>"
+msgstr "<i class=\"fa fa-calendar\" title=\"المرتجعات المستحقة\"/>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "<i class=\"fa fa-wrench\" title=\"Repairs In Progress\"/>"
+msgstr "<i class=\"fa fa-wrench\" title=\"الإصلاحات قيد التنفيذ\"/>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                                    Expected Return\n"
+"                                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                                    الإرجاع المتوقع\n"
+"                                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                                    RENTAL\n"
+"                                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                                    التأجير\n"
+"                                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                                    Start Date\n"
+"                                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                                    تاريخ البدء\n"
+"                                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                                    Total Amount\n"
+"                                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                                    المبلغ الإجمالي\n"
+"                                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                                Bike\n"
+"                                            </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                                الدراجة\n"
+"                                            </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                    Actual Return\n"
+"                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                    الإرجاع الفعلي\n"
+"                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                    Bike\n"
+"                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                    الدراجة\n"
+"                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                    Daily Rental Price\n"
+"                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                    سعر التأجير اليومي\n"
+"                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                    Expected Return\n"
+"                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                    الإرجاع المتوقع\n"
+"                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                    Rental Duration\n"
+"                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                    مدة التأجير\n"
+"                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                    Start Date\n"
+"                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                    تاريخ البدء\n"
+"                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid ""
+"<small class=\"text-muted\">\n"
+"                                    Total Amount\n"
+"                                </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                                    المبلغ الإجمالي\n"
+"                                </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid ""
+"<small class=\"text-muted\">\n"
+"                        RENTAL DETAILS\n"
+"                    </small>"
+msgstr ""
+"<small class=\"text-muted\">\n"
+"                        تفاصيل التأجير\n"
+"                    </small>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Actual Return Date</strong>"
+msgstr "<strong>تاريخ الإرجاع الفعلي</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Bike</strong>"
+msgstr "<strong>الدراجة</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Customer:</strong>"
+msgstr "<strong>العميل:</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Daily Rental Price</strong>"
+msgstr "<strong>سعر التأجير اليومي</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Expected Return Date</strong>"
+msgstr "<strong>تاريخ الإرجاع المتوقع</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Rental Duration</strong>"
+msgstr "<strong>مدة التأجير</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Rental Reference:</strong>"
+msgstr "<strong>مرجع التأجير:</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Start Date</strong>"
+msgstr "<strong>تاريخ البدء</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Status:</strong>"
+msgstr "<strong>الحالة:</strong>"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "<strong>Total Rental Amount</strong>"
+msgstr "<strong>إجمالي مبلغ التأجير</strong>"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/dashboard.py:0
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__active_rentals_today
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "Active Rentals Today"
+msgstr "التأجيرات النشطة اليوم"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__actual_return_date
+msgid "Actual Return Date"
+msgstr "تاريخ الإرجاع الفعلي"
+
+#. module: bike_workshop
+#: model:ir.actions.act_window,name:bike_workshop.action_bike_workshop_rental
+#: model:ir.ui.menu,name:bike_workshop.menu_bike_workshop_all_rentals
+msgid "All Rentals"
+msgstr "جميع التأجيرات"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__assigned_mechanic_id
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__assigned_mechanic_id
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_service_mixin__assigned_mechanic_id
+msgid "Assigned Mechanic"
+msgstr "الميكانيكي المسؤول"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Assigned Mechanic is required before starting the repair."
+msgstr "الميكانيكي المسؤول مطلوب قبل بدء الإصلاح."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__bike_id
+msgid "Bike"
+msgstr "الدراجة"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__name
+msgid "Bike Name / Code"
+msgstr "اسم / رمز الدراجة"
+
+#. module: bike_workshop
+#: model:ir.model,name:bike_workshop.model_bike_workshop_rental
+msgid "Bike Rental"
+msgstr "تأجير الدراجات"
+
+#. module: bike_workshop
+#: model:ir.model,name:bike_workshop.model_bike_workshop_repair
+msgid "Bike Repair Job"
+msgstr "عملية إصلاح الدراجة"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__source
+msgid "Bike Source"
+msgstr "مصدر الدراجة"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__bike_type
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__bike_type
+msgid "Bike Type"
+msgstr "نوع الدراجة"
+
+#. module: bike_workshop
+#: model:ir.model,name:bike_workshop.model_bike_workshop_bike
+#: model:ir.ui.menu,name:bike_workshop.bike_workshop_menu_root
+msgid "Bike Workshop"
+msgstr "ورشة الدراجات"
+
+#. module: bike_workshop
+#: model:ir.model,name:bike_workshop.model_bike_workshop_dashboard
+msgid "Bike Workshop Dashboard"
+msgstr "لوحة معلومات ورشة الدراجات"
+
+#. module: bike_workshop
+#: model:ir.actions.act_window,name:bike_workshop.bike_action
+#: model:ir.ui.menu,name:bike_workshop.bike_workshop_menu_bikes
+msgid "Bikes"
+msgstr "الدراجات"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__brand
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_repair_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__state__cancelled
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_bike__bike_type__city
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__external_bike_type__city
+#: model:ir.model.fields.selection,name:bike_workshop.selection__res_partner__preferred_bike_type__city
+msgid "City"
+msgstr "مدينة"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_repair_form
+msgid "Complete"
+msgstr "إكمال"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__state__completed
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_rental__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: bike_workshop
+#: model:ir.actions.act_window,name:bike_workshop.action_bike_workshop_confirmed_rentals
+#: model:ir.ui.menu,name:bike_workshop.menu_bike_workshop_confirmed_rentals
+msgid "Confirmed Rentals"
+msgstr "التأجيرات المؤكدة"
+
+#. module: bike_workshop
+#: model:ir.model,name:bike_workshop.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__create_uid
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__create_uid
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__create_uid
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__create_uid
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__create_uid
+msgid "Created by"
+msgstr "أنشأه"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__create_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__create_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__create_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__create_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__customer_id
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__customer_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "Customer Information"
+msgstr "معلومات العميل"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Customer is required before starting the repair."
+msgstr "العميل مطلوب قبل بدء الإصلاح."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__daily_rental_price
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__daily_rental_price
+msgid "Daily Rental Price"
+msgstr "سعر التأجير اليومي"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "Daily Rental Price cannot be changed after the rental is confirmed."
+msgstr "لا يمكن تغيير سعر التأجير اليومي بعد تأكيد التأجير."
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "Daily Rental Price cannot be negative."
+msgstr "لا يمكن أن يكون سعر التأجير اليومي سالبًا."
+
+#. module: bike_workshop
+#: model:ir.ui.menu,name:bike_workshop.menu_bike_workshop_dashboard
+msgid "Dashboard"
+msgstr "الصفحة الرئيسية"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__display_name
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__display_name
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__display_name
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__display_name
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__display_name
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_service_mixin__display_name
+#: model:ir.model.fields,field_description:bike_workshop.field_product_template__display_name
+#: model:ir.model.fields,field_description:bike_workshop.field_res_partner__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_rental__state__draft
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_bike__bike_type__electric
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__external_bike_type__electric
+#: model:ir.model.fields.selection,name:bike_workshop.selection__res_partner__preferred_bike_type__electric
+msgid "Electric"
+msgstr "كهربائية"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__expected_return_date
+msgid "Expected Return Date"
+msgstr "تاريخ الإرجاع المتوقع"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "Expected Return Date must be after Start Date."
+msgstr "يجب أن يكون تاريخ الإرجاع المتوقع بعد تاريخ البدء."
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__source__external
+msgid "External Bike"
+msgstr "دراجة خارجية"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__external_brand
+msgid "External Bike Brand"
+msgstr "علامة الدراجة الخارجية"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "External Bike Brand is required before starting the repair."
+msgstr "علامة الدراجة الخارجية مطلوبة قبل بدء الإصلاح."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__external_bike_description
+msgid "External Bike Description"
+msgstr "وصف الدراجة الخارجية"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "External Bike Description is required before starting the repair."
+msgstr "وصف الدراجة الخارجية مطلوب قبل بدء الإصلاح."
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_repair_form
+msgid "External Bike Information"
+msgstr "معلومات الدراجة الخارجية"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__external_bike_reference
+msgid "External Bike Reference"
+msgstr "مرجع الدراجة الخارجية"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "External Bike Reference is required before starting the repair."
+msgstr "مرجع الدراجة الخارجية مطلوب قبل بدء الإصلاح."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__external_bike_type
+msgid "External Bike Type"
+msgstr "نوع الدراجة الخارجية"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "External Bike Type is required before starting the repair."
+msgstr "نوع الدراجة الخارجية مطلوب قبل بدء الإصلاح."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__id
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__id
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__id
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__id
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__id
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_service_mixin__id
+#: model:ir.model.fields,field_description:bike_workshop.field_product_template__id
+#: model:ir.model.fields,field_description:bike_workshop.field_res_partner__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__state__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "Invalid Return Date"
+msgstr "تاريخ إرجاع غير صالح"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_product_product__is_spare_part
+#: model:ir.model.fields,field_description:bike_workshop.field_product_template__is_spare_part
+msgid "Is Spare Part"
+msgstr "قطعة غيار"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__last_service_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__last_service_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_service_mixin__last_service_date
+msgid "Last Service Date"
+msgstr "تاريخ آخر خدمة"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Last Service Date is required before completing the repair."
+msgstr "تاريخ آخر خدمة مطلوب قبل إكمال الإصلاح."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__write_uid
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__write_uid
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__write_uid
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__write_uid
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__write_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__write_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__write_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__write_date
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_bike__bike_type__mountain
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__external_bike_type__mountain
+#: model:ir.model.fields.selection,name:bike_workshop.selection__res_partner__preferred_bike_type__mountain
+msgid "Mountain"
+msgstr "جبلية"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_home_bike_rentals
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid "My Rentals"
+msgstr "تأجيراتي"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid "No rentals yet"
+msgstr "لا توجد تأجيرات حتى الآن"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "Only Confirmed rentals can be returned."
+msgstr "يمكن إرجاع التأجيرات المؤكدة فقط."
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Only Draft or In Progress repair jobs can be cancelled."
+msgstr "يمكن إلغاء عمليات الإصلاح التي تكون في حالة مسودة أو قيد التنفيذ فقط."
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "Only Draft rentals can be confirmed."
+msgstr "يمكن تأكيد التأجيرات التي تكون في حالة مسودة فقط."
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Only Draft repair jobs can be started."
+msgstr "يمكن بدء عمليات الإصلاح التي تكون في حالة مسودة فقط."
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Only In Progress repair jobs can be completed."
+msgstr "يمكن إكمال عمليات الإصلاح التي تكون قيد التنفيذ فقط."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_res_partner__preferred_bike_type
+#: model:ir.model.fields,field_description:bike_workshop.field_res_users__preferred_bike_type
+msgid "Preferred Bike Type"
+msgstr "نوع الدراجة المفضل"
+
+#. module: bike_workshop
+#: model:ir.model,name:bike_workshop.model_product_template
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__purchase_date
+msgid "Purchase Date"
+msgstr "تاريخ الشراء"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__quantity
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair_part_line.py:0
+msgid "Quantity cannot be negative."
+msgstr "لا يمكن أن تكون الكمية سالبة."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__reference
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: bike_workshop
+#: model:ir.actions.report,name:bike_workshop.action_report_rental_agreement
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "Rental Agreement"
+msgstr "اتفاقية التأجير"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__rental_count
+msgid "Rental Count"
+msgstr "عدد التأجيرات"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__rental_duration
+msgid "Rental Duration"
+msgstr "مدة التأجير"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "Rental Duration must be greater than 0."
+msgstr "يجب أن تكون مدة التأجير أكبر من 0."
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "Rental Information"
+msgstr "معلومات التأجير"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+#: model:ir.model.constraint,message:bike_workshop.constraint_bike_workshop_rental_unique_rental_reference
+msgid "Rental Reference Used in another Rental"
+msgstr "مرجع التأجير مستخدم في عملية تأجير أخرى"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+#: model:ir.actions.act_window,name:bike_workshop.action_bike_workshop_rental_analysis
+#: model:ir.ui.menu,name:bike_workshop.menu_bike_workshop_rental_analysis
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_pivot
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_graph
+msgid "Rental Analysis"
+msgstr "تحليل التأجيرات"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Confirmed and Returned"
+msgstr "المؤكدة والتي تم إرجاعها"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Rental Month"
+msgstr "شهر التأجير"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Rental Status"
+msgstr "حالة التأجير"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Return Performance"
+msgstr "أداء الإرجاع"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__return_performance
+msgid "Return Performance"
+msgstr "أداء الإرجاع"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_rental__return_performance__on_time
+msgid "On Time"
+msgstr "في الموعد"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_rental__return_performance__late
+msgid "Late"
+msgstr "متأخر"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_rental__return_performance__pending
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__bike_type
+msgid "Bike Type"
+msgstr "نوع الدراجة"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Bike Type"
+msgstr "نوع الدراجة"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Rental Analysis"
+msgstr "تحليل التأجيرات"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_analysis_search
+msgid "Rental Status"
+msgstr "حالة التأجير"
+
+#. module: bike_workshop
+#: model:ir.ui.menu,name:bike_workshop.menu_bike_workshop_rentals
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_view_form
+msgid "Rentals"
+msgstr "التأجيرات"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_repair_form
+msgid "Repair Information"
+msgstr "معلومات الإصلاح"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__repair_id
+msgid "Repair Job"
+msgstr "عملية الإصلاح"
+
+#. module: bike_workshop
+#: model:ir.actions.act_window,name:bike_workshop.action_bike_workshop_repair
+#: model:ir.ui.menu,name:bike_workshop.menu_bike_workshop_repairs
+msgid "Repair Jobs"
+msgstr "عمليات الإصلاح"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__reference
+msgid "Repair Reference"
+msgstr "مرجع الإصلاح"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+#: model:ir.model.constraint,message:bike_workshop.constraint_bike_workshop_repair_unique_repair_reference
+msgid "Repair Reference Used in another Repair Job"
+msgstr "مرجع الإصلاح مستخدم في عملية إصلاح أخرى"
+
+#. module: bike_workshop
+#: model:ir.model,name:bike_workshop.model_bike_workshop_repair_part_line
+msgid "Repair Spare Part Line"
+msgstr "سطر قطعة غيار الإصلاح"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/dashboard.py:0
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__repairs_in_progress
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "Repairs In Progress"
+msgstr "الإصلاحات قيد التنفيذ"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__reported_issue
+msgid "Reported Issue"
+msgstr "المشكلة المبلغ عنها"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Reported Issue is required before starting the repair."
+msgstr "المشكلة المبلغ عنها مطلوبة قبل بدء الإصلاح."
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_form
+msgid "Return"
+msgstr "إرجاع"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_rental__state__returned
+msgid "Returned"
+msgstr "تم الإرجاع"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/dashboard.py:0
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_dashboard__returns_due_today
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "Returns Due Today"
+msgstr "المرتجعات المستحقة اليوم"
+
+#. module: bike_workshop
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_bike__bike_type__road
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__external_bike_type__road
+#: model:ir.model.fields.selection,name:bike_workshop.selection__res_partner__preferred_bike_type__road
+msgid "Road"
+msgstr "طريق"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__service_notes
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__service_notes
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_service_mixin__service_notes
+msgid "Service Notes"
+msgstr "ملاحظات الخدمة"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Service Notes are required before completing the repair."
+msgstr "ملاحظات الخدمة مطلوبة قبل إكمال الإصلاح."
+
+#. module: bike_workshop
+#: model:ir.model,name:bike_workshop.model_bike_workshop_service_mixin
+msgid "Shared Service Information"
+msgstr "معلومات الخدمة المشتركة"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__part_line_ids
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_repair_form
+msgid "Spare Parts"
+msgstr "قطع الغيار"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_repair_form
+msgid "Start Repair"
+msgstr "بدء الإصلاح"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__subtotal
+msgid "Subtotal"
+msgstr "المجموع الفرعي"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid ""
+"This bike already has a confirmed rental that overlaps with the selected "
+"dates."
+msgstr "هذه الدراجة لديها بالفعل عملية تأجير مؤكدة تتداخل مع التواريخ المحددة."
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "This bike cannot be rented because it has an In Progress repair job."
+msgstr "لا يمكن تأجير هذه الدراجة لأن لديها عملية إصلاح قيد التنفيذ."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_rental__total_rental_amount
+msgid "Total Rental Amount"
+msgstr "إجمالي مبلغ التأجير"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/rental.py:0
+msgid "Total Rental Amount cannot be negative."
+msgstr "لا يمكن أن يكون إجمالي مبلغ التأجير سالبًا."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__total_spare_parts_cost
+msgid "Total Spare Parts Cost"
+msgstr "إجمالي تكلفة قطع الغيار"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair_part_line__unit_price
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair_part_line.py:0
+msgid "Unit Price cannot be negative."
+msgstr "لا يمكن أن يكون سعر الوحدة سالبًا."
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid "View Details"
+msgstr "عرض التفاصيل"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid "View your bike rental history and rental details."
+msgstr "اعرض سجل تأجير الدراجات وتفاصيل التأجير الخاصة بك."
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_bike__wheel_size
+msgid "Wheel Size (inches)"
+msgstr "حجم العجلة (بالبوصة)"
+
+#. module: bike_workshop
+#: model:ir.model.fields,field_description:bike_workshop.field_bike_workshop_repair__bike_id
+#: model:ir.model.fields.selection,name:bike_workshop.selection__bike_workshop_repair__source__workshop
+msgid "Workshop Bike"
+msgstr "دراجة الورشة"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/repair.py:0
+msgid "Workshop Bike is required before starting the repair."
+msgstr "دراجة الورشة مطلوبة قبل بدء الإصلاح."
+
+#. module: bike_workshop
+#: model:ir.actions.act_window,name:bike_workshop.action_bike_workshop_dashboard
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "Workshop Dashboard"
+msgstr "لوحة معلومات الورشة"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "Workshop Operations Dashboard"
+msgstr "لوحة عمليات الورشة"
+
+#. module: bike_workshop
+#: model:res.groups,name:bike_workshop.group_bike_workshop_staff
+msgid "Workshop Staff"
+msgstr "موظفو الورشة"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_my_rentals
+msgid "Your rental history will appear here."
+msgstr "سيظهر سجل التأجير الخاص بك هنا."
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/bike.py:0
+msgid "bike_id"
+msgstr ""
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+msgid "days"
+msgstr "أيام"
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/dashboard.py:0
+msgid "expected_return_date"
+msgstr ""
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/dashboard.py:0
+msgid "start_date"
+msgstr ""
+
+#. module: bike_workshop
+#. odoo-python
+#: code:addons/bike_workshop/models/dashboard.py:0
+msgid "state"
+msgstr "الحالة"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
+msgid "← Back to My Rentals"
+msgstr "← العودة إلى تأجيراتي"
