@@ -7,7 +7,7 @@
     </function>
 
     <record id="base.main_company" model="res.company">
-        <field name="logo" type="base64" file="bike_workshop/static/img/logo.jpg"/>
+        <field name="logo" type="base64" file="bike_workshop/static/description/icon.png"/>
     </record>
 
 </odoo>

@@ -22,13 +22,16 @@
         'report/rental_report_templates.xml',
         'views/portal_templates.xml',
         'views/rental_analysis_views.xml',
-        'data/company_logo.xml'
+        'data/company_logo.xml',
+        'views/res_users_views.xml'
     ],
 
     'assets': {
+        #
     'web.assets_backend': [
         'bike_workshop/static/src/css/branding.css',
     ],
+    #portal 
     'web.assets_frontend': [
         'bike_workshop/static/src/css/branding.css',
     ],

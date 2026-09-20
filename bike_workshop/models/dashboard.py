@@ -51,7 +51,7 @@ class BikeWorkshopDashboard(models.Model):
                 ("state", "=", "in_progress"),
             ]
         )
-
+       
         for dashboard in self:
             dashboard.active_rentals_today = active_rentals
             dashboard.returns_due_today = returns_due

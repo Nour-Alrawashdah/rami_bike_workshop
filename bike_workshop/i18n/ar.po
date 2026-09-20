@@ -1024,3 +1024,39 @@ msgstr "الحالة"
 #: model_terms:ir.ui.view,arch_db:bike_workshop.portal_rental_detail
 msgid "← Back to My Rentals"
 msgstr "← العودة إلى تأجيراتي"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "Overview of today's workshop operations"
+msgstr "نظرة عامة على عمليات الورشة اليوم"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.report_rental_agreement
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_form
+msgid "Rental Information"
+msgstr "معلومات التأجير"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "View Repairs"
+msgstr "عرض الإصلاحات"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "View Rentals"
+msgstr "عرض التأجيرات"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.bike_workshop_dashboard_view_form
+msgid "View Returns"
+msgstr "عرض المرتجعات"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_form
+msgid "Rental Dates"
+msgstr "تواريخ التأجير"
+
+#. module: bike_workshop
+#: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_form
+msgid "Rental Pricing"
+msgstr "تسعير التأجير"

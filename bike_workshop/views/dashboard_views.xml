@@ -5,149 +5,265 @@
     <record id="bike_workshop_dashboard_view_form" model="ir.ui.view">
         <field name="name">bike.workshop.dashboard.form</field>
         <field name="model">bike.workshop.dashboard</field>
+
         <field name="arch" type="xml">
 
-            <form string="Workshop Dashboard " create="0">
+            <form string="Workshop Dashboard" create="0" edit="0" delete="0">
+
                 <sheet>
 
                     <div
-                        class="oe_title"
-                        style="padding: 20px; background-color: #DEF2C9; border-radius: 12px;"
+                        style="
+                            padding: 25px;
+                            background-color: #DEF2C9;
+                            border-radius: 12px;
+                            margin-bottom: 25px;
+                        "
                     >
-                        <h1 style="color: #404040; margin: 0;">
+                        <h1
+                            style="
+                                color: #404040;
+                                margin: 0;
+                                font-size: 30px;
+                                font-weight: bold;
+                            "
+                        >
                             Workshop Operations Dashboard
                         </h1>
+
+                        <div
+                            style="
+                                color: #666666;
+                                font-size: 15px;
+                                margin-top: 6px;
+                            "
+                        >
+                            Overview of today's workshop operations
+                        </div>
                     </div>
 
-                    <div class="row mt-4">
+                    <div class="row">
 
-                        <!-- Active Rentals -->
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <button
-                                name="action_open_active_rentals"
-                                type="object"
-                                class="btn w-100 p-4"
-                                style="min-height: 150px; border-radius: 12px; background-color: #F2F2F2; color: #404040; border: 2px solid #9FBF6F; box-shadow: 0 2px 6px rgba(64, 64, 64, 0.10);"
+
+                            <div
+                                style="
+                                    background-color: #F2F2F2;
+                                    border: 2px solid #9FBF6F;
+                                    border-radius: 14px;
+                                    padding: 25px;
+                                    min-height: 270px;
+                                    box-shadow: 0 3px 8px rgba(64,64,64,0.10);
+                                    text-align: center;
+                                "
                             >
-                                <div class="text-center">
 
-                                    <div
-                                        style="font-size: 38px; color: #8EBF45;"
-                                    >
-                                        <i
-                                            class="fa fa-bicycle"
-                                            title="Active Rentals"
-                                        />
-                                    </div>
-
-                                    <div
-                                        style="font-size: 18px; font-weight: bold; color: #404040;"
-                                    >
-                                        Active Rentals Today
-                                    </div>
-
-                                    <div
-                                        style="font-size: 34px; font-weight: bold; color: #8EBF45;"
-                                    >
-                                        <field
-                                            name="active_rentals_today"
-                                            nolabel="1"
-                                        />
-                                    </div>
-
+                                <div
+                                    style="
+                                        font-size: 45px;
+                                        color: #8EBF45;
+                                        margin-bottom: 12px;
+                                    "
+                                >
+                                    <i class="fa fa-bicycle"/>
                                 </div>
-                            </button>
+
+                                <div
+                                    style="
+                                        font-size: 19px;
+                                        font-weight: bold;
+                                        color: #404040;
+                                        margin-bottom: 10px;
+                                    "
+                                >
+                                    Active Rentals Today
+                                </div>
+
+                                <div
+                                    style="
+                                        font-size: 38px;
+                                        font-weight: bold;
+                                        color: #8EBF45;
+                                        margin-bottom: 18px;
+                                    "
+                                >
+                                    <field
+                                        name="active_rentals_today"
+                                        nolabel="1"
+                                    />
+                                </div>
+
+                                <button
+                                    name="action_open_active_rentals"
+                                    type="object"
+                                    class="btn"
+                                    style="
+                                        background-color: #8EBF45 !important;
+                                        color: white !important;
+                                        border: 2px solid #8EBF45 !important;
+                                        border-radius: 50px !important;
+                                        padding: 9px 28px !important;
+                                        font-weight: bold !important;
+                                        min-width: 150px;
+                                    "
+                                >
+                                    View Rentals
+                                </button>
+
+                            </div>
+
                         </div>
 
-
-                        <!-- Returns Due -->
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <button
-                                name="action_open_returns_due"
-                                type="object"
-                                class="btn w-100 p-4"
-                                style="min-height: 150px; border-radius: 12px; background-color: #DEF2C9; color: #404040; border: 2px solid #9FBF6F; box-shadow: 0 2px 6px rgba(64, 64, 64, 0.10);"
+
+                            <div
+                                style="
+                                    background-color: #DEF2C9;
+                                    border: 2px solid #9FBF6F;
+                                    border-radius: 14px;
+                                    padding: 25px;
+                                    min-height: 270px;
+                                    box-shadow: 0 3px 8px rgba(64,64,64,0.10);
+                                    text-align: center;
+                                "
                             >
-                                <div class="text-center">
 
-                                    <div
-                                        style="font-size: 38px; color: #8EBF45;"
-                                    >
-                                        <i
-                                            class="fa fa-calendar"
-                                            title="Returns Due"
-                                        />
-                                    </div>
-
-                                    <div
-                                        style="font-size: 18px; font-weight: bold; color: #404040;"
-                                    >
-                                        Returns Due Today
-                                    </div>
-
-                                    <div
-                                        style="font-size: 34px; font-weight: bold; color: #8EBF45;"
-                                    >
-                                        <field
-                                            name="returns_due_today"
-                                            nolabel="1"
-                                        />
-                                    </div>
-
+                                <div
+                                    style="
+                                        font-size: 45px;
+                                        color: #8EBF45;
+                                        margin-bottom: 12px;
+                                    "
+                                >
+                                    <i class="fa fa-calendar"/>
                                 </div>
-                            </button>
+
+                                <div
+                                    style="
+                                        font-size: 19px;
+                                        font-weight: bold;
+                                        color: #404040;
+                                        margin-bottom: 10px;
+                                    "
+                                >
+                                    Returns Due Today
+                                </div>
+
+                                <div
+                                    style="
+                                        font-size: 38px;
+                                        font-weight: bold;
+                                        color: #8EBF45;
+                                        margin-bottom: 18px;
+                                    "
+                                >
+                                    <field
+                                        name="returns_due_today"
+                                        nolabel="1"
+                                    />
+                                </div>
+
+                                <button
+                                    name="action_open_returns_due"
+                                    type="object"
+                                    class="btn"
+                                    style="
+                                        background-color: #8EBF45 !important;
+                                        color: white !important;
+                                        border: 2px solid #8EBF45 !important;
+                                        border-radius: 50px !important;
+                                        padding: 9px 28px !important;
+                                        font-weight: bold !important;
+                                        min-width: 150px;
+                                    "
+                                >
+                                    View Returns
+                                </button>
+
+                            </div>
+
                         </div>
 
-
-                        <!-- Repairs -->
                         <div class="col-lg-4 col-md-6 mb-4">
-                            <button
-                                name="action_open_repairs_in_progress"
-                                type="object"
-                                class="btn w-100 p-4"
-                                style="min-height: 150px; border-radius: 12px; background-color: #F2F2F2; color: #404040; border: 2px solid #9FBF6F; box-shadow: 0 2px 6px rgba(64, 64, 64, 0.10);"
+
+                            <div
+                                style="
+                                    background-color: #F2F2F2;
+                                    border: 2px solid #9FBF6F;
+                                    border-radius: 14px;
+                                    padding: 25px;
+                                    min-height: 270px;
+                                    box-shadow: 0 3px 8px rgba(64,64,64,0.10);
+                                    text-align: center;
+                                "
                             >
-                                <div class="text-center">
 
-                                    <div
-                                        style="font-size: 38px; color: #9FBF6F;"
-                                    >
-                                        <i
-                                            class="fa fa-wrench"
-                                            title="Repairs In Progress"
-                                        />
-                                    </div>
-
-                                    <div
-                                        style="font-size: 18px; font-weight: bold; color: #404040;"
-                                    >
-                                        Repairs In Progress
-                                    </div>
-
-                                    <div
-                                        style="font-size: 34px; font-weight: bold; color: #8EBF45;"
-                                    >
-                                        <field
-                                            name="repairs_in_progress"
-                                            nolabel="1"
-                                        />
-                                    </div>
-
+                                <div
+                                    style="
+                                        font-size: 45px;
+                                        color: #9FBF6F;
+                                        margin-bottom: 12px;
+                                    "
+                                >
+                                    <i class="fa fa-wrench"/>
                                 </div>
-                            </button>
+
+                                <div
+                                    style="
+                                        font-size: 19px;
+                                        font-weight: bold;
+                                        color: #404040;
+                                        margin-bottom: 10px;
+                                    "
+                                >
+                                    Repairs In Progress
+                                </div>
+
+                                <div
+                                    style="
+                                        font-size: 38px;
+                                        font-weight: bold;
+                                        color: #8EBF45;
+                                        margin-bottom: 18px;
+                                    "
+                                >
+                                    <field
+                                        name="repairs_in_progress"
+                                        nolabel="1"
+                                    />
+                                </div>
+
+                                <button
+                                    name="action_open_repairs_in_progress"
+                                    type="object"
+                                    class="btn"
+                                    style="
+                                        background-color: #8EBF45 !important;
+                                        color: white !important;
+                                        border: 2px solid #8EBF45 !important;
+                                        border-radius: 50px !important;
+                                        padding: 9px 28px !important;
+                                        font-weight: bold !important;
+                                        min-width: 150px;
+                                    "
+                                >
+                                    View Repairs
+                                </button>
+
+                            </div>
+
                         </div>
 
                     </div>
 
                 </sheet>
+
             </form>
 
         </field>
     </record>
 
-
     <record id="bike_workshop_dashboard_record" model="bike.workshop.dashboard"/>
-
 
     <record id="action_bike_workshop_dashboard" model="ir.actions.act_window">
         <field name="name">Workshop Dashboard</field>
@@ -156,7 +272,6 @@
         <field name="res_id" ref="bike_workshop_dashboard_record"/>
         <field name="target">current</field>
     </record>
-
 
     <menuitem
         id="menu_bike_workshop_dashboard"
