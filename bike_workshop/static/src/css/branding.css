@@ -179,3 +179,13 @@ button[name="action_return"]:hover {
     background-color: #8EBF45 !important;
 
 }
+
+.btn-workshop-green {
+    background-color: #8EBF45 !important;
+    color: white !important;
+    border: 2px solid #8EBF45 !important;
+    border-radius: 50px !important;
+    padding: 9px 28px !important;
+    font-weight: bold !important;
+    min-width: 150px;
+}

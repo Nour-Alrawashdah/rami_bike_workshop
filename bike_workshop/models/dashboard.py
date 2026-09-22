@@ -5,11 +5,19 @@ class BikeWorkshopDashboard(models.Model):
     _name = "bike.workshop.dashboard"
     _description = "Bike Workshop Dashboard"
 
-    
     name = fields.Char(
-    default="Workshop Dashboard",
-    readonly=True,
-)
+        default="Workshop Dashboard",
+        readonly=True,
+    )
+
+    def _compute_display_name(self):
+        dashboard_action = self.env.ref(
+            "bike_workshop.action_bike_workshop_dashboard"
+        )
+
+        for record in self:
+            record.display_name = dashboard_action.name
+
     active_rentals_today = fields.Integer(
         string="Active Rentals Today",
         compute="_compute_counts",
@@ -51,7 +59,7 @@ class BikeWorkshopDashboard(models.Model):
                 ("state", "=", "in_progress"),
             ]
         )
-       
+
         for dashboard in self:
             dashboard.active_rentals_today = active_rentals
             dashboard.returns_due_today = returns_due

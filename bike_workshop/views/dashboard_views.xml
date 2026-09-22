@@ -96,16 +96,7 @@
                                 <button
                                     name="action_open_active_rentals"
                                     type="object"
-                                    class="btn"
-                                    style="
-                                        background-color: #8EBF45 !important;
-                                        color: white !important;
-                                        border: 2px solid #8EBF45 !important;
-                                        border-radius: 50px !important;
-                                        padding: 9px 28px !important;
-                                        font-weight: bold !important;
-                                        min-width: 150px;
-                                    "
+                                    class="btn btn-workshop-green"
                                 >
                                     View Rentals
                                 </button>
@@ -166,16 +157,8 @@
                                 <button
                                     name="action_open_returns_due"
                                     type="object"
-                                    class="btn"
-                                    style="
-                                        background-color: #8EBF45 !important;
-                                        color: white !important;
-                                        border: 2px solid #8EBF45 !important;
-                                        border-radius: 50px !important;
-                                        padding: 9px 28px !important;
-                                        font-weight: bold !important;
-                                        min-width: 150px;
-                                    "
+
+                                  class="btn btn-workshop-green"
                                 >
                                     View Returns
                                 </button>
@@ -236,16 +219,7 @@
                                 <button
                                     name="action_open_repairs_in_progress"
                                     type="object"
-                                    class="btn"
-                                    style="
-                                        background-color: #8EBF45 !important;
-                                        color: white !important;
-                                        border: 2px solid #8EBF45 !important;
-                                        border-radius: 50px !important;
-                                        padding: 9px 28px !important;
-                                        font-weight: bold !important;
-                                        min-width: 150px;
-                                    "
+                                    class="btn btn-workshop-green"
                                 >
                                     View Repairs
                                 </button>

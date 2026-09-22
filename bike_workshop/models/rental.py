@@ -28,12 +28,14 @@ class Rental(models.Model):
         "bike.workshop.bike",
         required=True,
     )
-   #for analyzing 
+
+    # for analyzing
     bike_type = fields.Selection(
-    related="bike_id.bike_type",
-    store=True,
-    readonly=True,
-)
+        related="bike_id.bike_type",
+        store=True,
+        readonly=True,
+    )
+
     start_date = fields.Date(
         required=True,
     )
@@ -173,13 +175,26 @@ class Rental(models.Model):
                       "that overlaps with the selected dates.")
                 )
 
-    @api.depends("start_date", "expected_return_date")
+    @api.depends(
+        "start_date",
+        "expected_return_date",
+        "actual_return_date",
+    )
     def _compute_rental_duration(self):
         for rental in self:
-            if rental.start_date and rental.expected_return_date:
+            if not rental.start_date:
+                rental.rental_duration = 0
+                continue
+
+            end_date = (
+                rental.actual_return_date
+                or rental.expected_return_date
+            )
+
+            if end_date:
                 rental.rental_duration = (
-                    rental.expected_return_date - rental.start_date
-                ).days
+                    end_date - rental.start_date
+                ).days + 1
             else:
                 rental.rental_duration = 0
 
@@ -208,7 +223,9 @@ class Rental(models.Model):
             return {
                 "warning": {
                     "title": _("Invalid Return Date"),
-                    "message": _("Expected Return Date must be after Start Date."),
+                    "message": _(
+                        "Expected Return Date must be after Start Date."
+                    ),
                 }
             }
 

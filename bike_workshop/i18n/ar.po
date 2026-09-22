@@ -1060,3 +1060,4 @@ msgstr "تواريخ التأجير"
 #: model_terms:ir.ui.view,arch_db:bike_workshop.view_bike_workshop_rental_form
 msgid "Rental Pricing"
 msgstr "تسعير التأجير"
+
