@@ -194,7 +194,7 @@ class Rental(models.Model):
             if end_date:
                 rental.rental_duration = (
                     end_date - rental.start_date
-                ).days + 1
+                ).days
             else:
                 rental.rental_duration = 0
 
