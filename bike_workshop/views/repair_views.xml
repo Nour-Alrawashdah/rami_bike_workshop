@@ -105,7 +105,7 @@
                     <!-- Repair Information -->
                     <group string="Repair Information">
                         <field name="reported_issue"/>
-                        <field name="assigned_mechanic_id"/>
+                        <field name="assigned_mechanic_id" domain="[('is_maintenance_engineer', '=', True)]"/>
                         <field name="last_service_date"/>
                         <field name="service_notes"/>
                     </group>

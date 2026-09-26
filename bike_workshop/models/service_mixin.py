@@ -8,6 +8,7 @@ class ServiceMixin(models.AbstractModel):
     assigned_mechanic_id = fields.Many2one(
         "res.users",
         string="Assigned Mechanic",
+        domain=[("is_maintenance_engineer", "=", True)],
     )
 
     last_service_date = fields.Date(

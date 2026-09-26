@@ -1,15 +1,23 @@
-from odoo import fields, models
+from odoo import _, fields, models
 
 
 class BikeWorkshopDashboard(models.Model):
     _name = "bike.workshop.dashboard"
     _description = "Bike Workshop Dashboard"
 
-    
     name = fields.Char(
-    default="Workshop Dashboard",
-    readonly=True,
-)
+        default="Workshop Dashboard",
+        readonly=True,
+    )
+
+    def _compute_display_name(self):
+        dashboard_action = self.env.ref(
+            "bike_workshop.action_bike_workshop_dashboard"
+        )
+
+        for record in self:
+            record.display_name = dashboard_action.name
+
     active_rentals_today = fields.Integer(
         string="Active Rentals Today",
         compute="_compute_counts",
@@ -62,7 +70,7 @@ class BikeWorkshopDashboard(models.Model):
 
         return {
             "type": "ir.actions.act_window",
-            "name": "Active Rentals Today",
+            "name": _("Active Rentals Today"),
             "res_model": "bike.workshop.rental",
             "view_mode": "list,form",
             "domain": [
@@ -77,7 +85,7 @@ class BikeWorkshopDashboard(models.Model):
 
         return {
             "type": "ir.actions.act_window",
-            "name": "Returns Due Today",
+            "name": _("Returns Due Today"),
             "res_model": "bike.workshop.rental",
             "view_mode": "list,form",
             "domain": [
@@ -89,7 +97,7 @@ class BikeWorkshopDashboard(models.Model):
     def action_open_repairs_in_progress(self):
         return {
             "type": "ir.actions.act_window",
-            "name": "Repairs In Progress",
+            "name": _("Repairs In Progress"),
             "res_model": "bike.workshop.repair",
             "view_mode": "list,form",
             "domain": [

@@ -4,7 +4,7 @@ from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
 class BikeWorkshopPortal(CustomerPortal):
-
+    
     def _prepare_home_portal_values(self, counters):
         values = super()._prepare_home_portal_values(counters)
 

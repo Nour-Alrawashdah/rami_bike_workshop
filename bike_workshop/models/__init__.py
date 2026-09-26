@@ -6,3 +6,4 @@ from . import repair_part_line
 from . import res_partner
 from . import product_template
 from . import dashboard
+from . import res_users
