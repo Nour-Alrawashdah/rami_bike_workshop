@@ -1,0 +1,191 @@
+/* Main menu bar of Bike Workshop */
+
+.o_main_navbar:has(.o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"]) {
+
+    background-color: #8EBF45 !important;
+
+}
+
+
+/* Bike Workshop application name */
+
+.o_main_navbar:has(.o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"])
+
+.o_menu_brand {
+
+    color: #FFFFFF !important;
+
+    background-color: #8EBF45 !important;
+
+}
+
+
+/* Bike Workshop menu items */
+
+.o_main_navbar:has(.o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"])
+
+.o_menu_sections .o_nav_entry,
+
+.o_main_navbar:has(.o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"])
+
+.o_menu_sections .dropdown-toggle {
+
+    color: #FFFFFF !important;
+
+    background-color: #8EBF45 !important;
+
+}
+
+
+/* Bike Workshop menu items - Hover */
+
+.o_main_navbar:has(.o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"])
+
+.o_menu_sections .o_nav_entry:hover,
+
+.o_main_navbar:has(.o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"])
+
+.o_menu_sections .dropdown-toggle:hover {
+
+    background-color: #9FBF6F !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+/* Bike Workshop - New Button */
+
+.o_web_client:has(
+    .o_main_navbar .o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"]
+)
+.o_list_button_add {
+
+    background-color: #8EBF45 !important;
+
+    border-color: #8EBF45 !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+/* Bike Workshop - New Button Hover */
+
+.o_web_client:has(
+    .o_main_navbar .o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"]
+)
+.o_list_button_add:hover {
+
+    background-color: #9FBF6F !important;
+
+    border-color: #9FBF6F !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+/* Bike Workshop - Form New Button */
+
+.o_web_client:has(
+    .o_main_navbar .o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"]
+)
+.o_form_button_create {
+
+    background-color: #8EBF45 !important;
+
+    border-color: #8EBF45 !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+/* Bike Workshop - Form New Button Hover */
+
+.o_web_client:has(
+    .o_main_navbar .o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"]
+)
+.o_form_button_create:hover {
+
+    background-color: #9FBF6F !important;
+
+    border-color: #9FBF6F !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+/* Bike Workshop - Return Button */
+
+.o_web_client:has(
+    .o_main_navbar .o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"]
+)
+button[name="action_return"] {
+
+    background-color: #8EBF45 !important;
+
+    border-color: #8EBF45 !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+/* Bike Workshop - Return Button Hover */
+
+.o_web_client:has(
+    .o_main_navbar .o_menu_brand[data-menu-xmlid="bike_workshop.bike_workshop_menu_root"]
+)
+button[name="action_return"]:hover {
+
+    background-color: #9FBF6F !important;
+
+    border-color: #9FBF6F !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+/* Bike Workshop - Portal Branding */
+
+.o_portal_wrap .btn-primary {
+
+    background-color: #8EBF45 !important;
+
+    border-color: #8EBF45 !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+.o_portal_wrap .btn-primary:hover {
+
+    background-color: #9FBF6F !important;
+
+    border-color: #9FBF6F !important;
+
+    color: #FFFFFF !important;
+
+}
+
+
+.o_portal_wrap .badge.bg-primary {
+
+    background-color: #8EBF45 !important;
+
+}
+
+.btn-workshop-green {
+    background-color: #8EBF45 !important;
+    color: white !important;
+    border: 2px solid #8EBF45 !important;
+    border-radius: 50px !important;
+    padding: 9px 28px !important;
+    font-weight: bold !important;
+    min-width: 150px;
+}

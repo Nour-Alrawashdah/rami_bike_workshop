@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from .constants import BIKE_TYPE_SELECTION
 
@@ -11,7 +11,7 @@ class Repair(models.Model):
 
     _unique_repair_reference = models.Constraint(
         "UNIQUE(reference)",
-        "Repair Reference Used in another Repair Job",
+        _("Repair Reference Used in another Repair Job"),
     )
 
     reference = fields.Char(
@@ -109,48 +109,48 @@ class Repair(models.Model):
         for repair in self:
             if repair.state != "draft":
                 raise ValidationError(
-                    "Only Draft repair jobs can be started."
+                    _("Only Draft repair jobs can be started.")
                 )
 
             if not repair.customer_id:
                 raise ValidationError(
-                    "Customer is required before starting the repair."
+                    _("Customer is required before starting the repair.")
                 )
 
             if not repair.reported_issue:
                 raise ValidationError(
-                    "Reported Issue is required before starting the repair."
+                    _("Reported Issue is required before starting the repair.")
                 )
 
             if not repair.assigned_mechanic_id:
                 raise ValidationError(
-                    "Assigned Mechanic is required before starting the repair."
+                    _("Assigned Mechanic is required before starting the repair.")
                 )
 
             if repair.source == "workshop" and not repair.bike_id:
                 raise ValidationError(
-                    "Workshop Bike is required before starting the repair."
+                    _("Workshop Bike is required before starting the repair.")
                 )
 
             if repair.source == "external":
                 if not repair.external_bike_reference:
                     raise ValidationError(
-                        "External Bike Reference is required before starting the repair."
+                        _("External Bike Reference is required before starting the repair.")
                     )
 
                 if not repair.external_bike_description:
                     raise ValidationError(
-                        "External Bike Description is required before starting the repair."
+                        _("External Bike Description is required before starting the repair.")
                     )
 
                 if not repair.external_brand:
                     raise ValidationError(
-                        "External Bike Brand is required before starting the repair."
+                        _("External Bike Brand is required before starting the repair.")
                     )
 
                 if not repair.external_bike_type:
                     raise ValidationError(
-                        "External Bike Type is required before starting the repair."
+                        _("External Bike Type is required before starting the repair.")
                     )
 
             repair.state = "in_progress"
@@ -159,17 +159,17 @@ class Repair(models.Model):
         for repair in self:
             if repair.state != "in_progress":
                 raise ValidationError(
-                    "Only In Progress repair jobs can be completed."
+                    _("Only In Progress repair jobs can be completed.")
                 )
 
             if not repair.service_notes:
                 raise ValidationError(
-                    "Service Notes are required before completing the repair."
+                    _("Service Notes are required before completing the repair.")
                 )
 
             if not repair.last_service_date:
                 raise ValidationError(
-                    "Last Service Date is required before completing the repair."
+                    _("Last Service Date is required before completing the repair.")
                 )
 
             if repair.source == "workshop" and repair.bike_id:
@@ -186,7 +186,7 @@ class Repair(models.Model):
         for repair in self:
             if repair.state not in ("draft", "in_progress"):
                 raise ValidationError(
-                    "Only Draft or In Progress repair jobs can be cancelled."
+                    _("Only Draft or In Progress repair jobs can be cancelled.")
                 )
 
             repair.state = "cancelled"

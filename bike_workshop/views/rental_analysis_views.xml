@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- Rental Analysis Pivot -->
+    <record id="view_bike_workshop_rental_pivot" model="ir.ui.view">
+        <field name="name">bike.workshop.rental.pivot</field>
+        <field name="model">bike.workshop.rental</field>
+        <field name="arch" type="xml">
+            <pivot string="Rental Analysis" disable_linking="True">
+
+               
+                <field name="start_date" interval="month" type="row"/>
+                <field name="bike_type" type="row"/>
+                <field name="state" type="row"/>
+                <field name="customer_id" type="row"/>
+                <field name="return_performance" type="row"/>
+
+                <!-- Measures -->
+                <field name="total_rental_amount" type="measure"/>
+                <field name="rental_duration" type="measure"/>
+
+            </pivot>
+        </field>
+    </record>
+
+
+    <!-- Rental Analysis Search -->
+    <record id="view_bike_workshop_rental_analysis_search" model="ir.ui.view">
+        <field name="name">bike.workshop.rental.analysis.search</field>
+        <field name="model">bike.workshop.rental</field>
+        <field name="arch" type="xml">
+            <search>
+
+                <!-- Filters -->
+                <field name="state"/>
+                <field name="bike_type"/>
+                <field name="start_date"/>
+                <field name="return_performance"/>
+
+                <separator/>
+
+                <!-- Default: Exclude Draft Rentals -->
+                <filter
+                    name="confirmed_returned"
+                    string="Confirmed and Returned"
+                    domain="[('state', 'in', ['confirmed', 'returned'])]"
+                />
+
+                <group>
+
+                    <!-- Group By -->
+                    <filter
+                        name="group_by_rental_month"
+                        string="Rental Month"
+                        context="{'group_by': 'start_date:month'}"
+                    />
+
+                    <filter
+                        name="group_by_bike_type"
+                        string="Bike Type"
+                        context="{'group_by': 'bike_type'}"
+                    />
+
+                    <filter
+                        name="group_by_state"
+                        string="Rental Status"
+                        context="{'group_by': 'state'}"
+                    />
+
+                    <filter
+                        name="group_by_customer"
+                        string="Customer"
+                        context="{'group_by': 'customer_id'}"
+                    />
+
+                    <filter
+                        name="group_by_return_performance"
+                        string="Return Performance"
+                        context="{'group_by': 'return_performance'}"
+                    />
+
+                </group>
+
+            </search>
+        </field>
+    </record>
+<!-- Rental Analysis Graph -->
+<record id="view_bike_workshop_rental_graph" model="ir.ui.view">
+    <field name="name">bike.workshop.rental.graph</field>
+    <field name="model">bike.workshop.rental</field>
+    <field name="arch" type="xml">
+        <graph string="Rental Analysis" type="bar" disable_linking="True">
+
+            <field name="start_date" interval="month"/>
+            <field name="total_rental_amount" type="measure"/>
+
+        </graph>
+    </field>
+</record>
+
+<!-- Rental Analysis Action -->
+<record id="action_bike_workshop_rental_analysis" model="ir.actions.act_window">
+    <field name="name">Rental Analysis</field>
+    <field name="res_model">bike.workshop.rental</field>
+    <field name="view_mode">pivot,graph</field>
+    <field name="search_view_id" ref="view_bike_workshop_rental_analysis_search"/>
+    <field name="context">
+        {
+            'create': False,
+            'edit': False,
+            'delete': False,
+            'search_default_confirmed_returned': 1
+        }
+    </field>
+</record>
+
+<!-- Rental Analysis Menu -->
+<menuitem
+    id="menu_bike_workshop_rental_analysis"
+    name="Rental Analysis"
+    parent="menu_bike_workshop_rentals"
+    action="action_bike_workshop_rental_analysis"
+/>
+</odoo>

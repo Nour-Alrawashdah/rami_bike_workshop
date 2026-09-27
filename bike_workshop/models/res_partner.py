@@ -9,3 +9,5 @@ class ResPartner(models.Model):
         BIKE_TYPE_SELECTION,
         string="Preferred Bike Type",
     )
+
+   

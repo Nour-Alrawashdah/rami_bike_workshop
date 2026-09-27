@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -9,7 +9,7 @@ class Rental(models.Model):
 
     _unique_rental_reference = models.Constraint(
         "UNIQUE(reference)",
-        "Rental Reference Used in another Rental",
+        _("Rental Reference Used in another Rental"),
     )
 
     reference = fields.Char(
@@ -29,6 +29,13 @@ class Rental(models.Model):
         required=True,
     )
 
+    # for analyzing
+    bike_type = fields.Selection(
+        related="bike_id.bike_type",
+        store=True,
+        readonly=True,
+    )
+
     start_date = fields.Date(
         required=True,
     )
@@ -46,6 +53,7 @@ class Rental(models.Model):
     rental_duration = fields.Integer(
         compute="_compute_rental_duration",
         store=True,
+        group_operator="avg",
     )
 
     total_rental_amount = fields.Float(
@@ -61,6 +69,16 @@ class Rental(models.Model):
         ],
         required=True,
         default="draft",
+    )
+
+    return_performance = fields.Selection(
+        [
+            ("on_time", "On Time"),
+            ("late", "Late"),
+            ("pending", "Pending"),
+        ],
+        compute="_compute_return_performance",
+        store=True,
     )
 
     @api.model_create_multi
@@ -90,7 +108,7 @@ class Rental(models.Model):
                 and rental.expected_return_date <= rental.start_date
             ):
                 raise ValidationError(
-                    "Expected Return Date must be after Start Date."
+                    _("Expected Return Date must be after Start Date.")
                 )
 
     @api.constrains(
@@ -102,17 +120,17 @@ class Rental(models.Model):
         for rental in self:
             if rental.rental_duration <= 0:
                 raise ValidationError(
-                    "Rental Duration must be greater than 0."
+                    _("Rental Duration must be greater than 0.")
                 )
 
             if rental.daily_rental_price < 0:
                 raise ValidationError(
-                    "Daily Rental Price cannot be negative."
+                    _("Daily Rental Price cannot be negative.")
                 )
 
             if rental.total_rental_amount < 0:
                 raise ValidationError(
-                    "Total Rental Amount cannot be negative."
+                    _("Total Rental Amount cannot be negative.")
                 )
 
     @api.constrains(
@@ -136,8 +154,8 @@ class Rental(models.Model):
 
             if in_progress_repair:
                 raise ValidationError(
-                    "This bike cannot be rented because it has "
-                    "an In Progress repair job."
+                    _("This bike cannot be rented because it has "
+                      "an In Progress repair job.")
                 )
 
             conflicting_rental = self.env["bike.workshop.rental"].search(
@@ -153,19 +171,42 @@ class Rental(models.Model):
 
             if conflicting_rental:
                 raise ValidationError(
-                    "This bike already has a confirmed rental "
-                    "that overlaps with the selected dates."
+                    _("This bike already has a confirmed rental "
+                      "that overlaps with the selected dates.")
                 )
 
-    @api.depends("start_date", "expected_return_date")
+    @api.depends(
+        "start_date",
+        "expected_return_date",
+        "actual_return_date",
+    )
     def _compute_rental_duration(self):
         for rental in self:
-            if rental.start_date and rental.expected_return_date:
+            if not rental.start_date:
+                rental.rental_duration = 0
+                continue
+
+            end_date = (
+                rental.actual_return_date
+                or rental.expected_return_date
+            )
+
+            if end_date:
                 rental.rental_duration = (
-                    rental.expected_return_date - rental.start_date
+                    end_date - rental.start_date
                 ).days
             else:
                 rental.rental_duration = 0
+
+    @api.depends("actual_return_date", "expected_return_date")
+    def _compute_return_performance(self):
+        for rental in self:
+            if not rental.actual_return_date:
+                rental.return_performance = "pending"
+            elif rental.actual_return_date <= rental.expected_return_date:
+                rental.return_performance = "on_time"
+            else:
+                rental.return_performance = "late"
 
     @api.onchange("bike_id")
     def _onchange_bike_id(self):
@@ -181,8 +222,10 @@ class Rental(models.Model):
         ):
             return {
                 "warning": {
-                    "title": "Invalid Return Date",
-                    "message": "Expected Return Date must be after Start Date.",
+                    "title": _("Invalid Return Date"),
+                    "message": _(
+                        "Expected Return Date must be after Start Date."
+                    ),
                 }
             }
 
@@ -202,8 +245,8 @@ class Rental(models.Model):
                     != rental.daily_rental_price
                 ):
                     raise ValidationError(
-                        "Daily Rental Price cannot be changed after "
-                        "the rental is confirmed."
+                        _("Daily Rental Price cannot be changed after "
+                          "the rental is confirmed.")
                     )
 
         return super().write(vals)
@@ -212,7 +255,7 @@ class Rental(models.Model):
         for rental in self:
             if rental.state != "draft":
                 raise ValidationError(
-                    "Only Draft rentals can be confirmed."
+                    _("Only Draft rentals can be confirmed.")
                 )
 
             rental.state = "confirmed"
@@ -221,7 +264,7 @@ class Rental(models.Model):
         for rental in self:
             if rental.state != "confirmed":
                 raise ValidationError(
-                    "Only Confirmed rentals can be returned."
+                    _("Only Confirmed rentals can be returned.")
                 )
 
             rental.state = "returned"
